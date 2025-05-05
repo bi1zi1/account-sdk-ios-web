@@ -18,9 +18,9 @@ public final class AuthenticatedURLSession {
      - parameter configuration: The URLSessionConfiguration object used for creating URLSession.
      
      */
-    public init(user: User, configuration: URLSessionConfiguration) {
+    public init(user: User, configuration: URLSessionConfiguration, delegate: (any URLSessionDelegate)?) {
         self.user = user
-        self.urlSession = URLSession(configuration: configuration)
+        self.urlSession = URLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
     }
 
     /**
